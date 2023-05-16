@@ -1,0 +1,17 @@
+* {
+    font-family: 'Poppins';
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #2E0249;
+    --color-secundary: #A91079;
+    --color-white: #EEEEEE;
+}
+
+body {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
