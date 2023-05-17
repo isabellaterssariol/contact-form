@@ -22,7 +22,7 @@ main {
     width: 100vw;
 }
 
-#form {
+section > div#form {
     position: absolute;
     top: 50%;
     left: 70%;
@@ -32,8 +32,21 @@ main {
     transition: width .3s, height .3s;
     transition-timing-function: ease;
 
+    display: block;
+    padding: 10px;
+
     background-color: var(--color-white);
     border-radius: 20px;
     overflow: hidden; /*to not leak content outside the border*/
 }
+
+div.campo {
+    display: block;
+    border: none;
+    border-radius: 8px;
+    width: 30px;
+    height: 40px;
+    margin: 5px 0px;
+}
+
 
