@@ -25,15 +25,22 @@
         <section>
             <div id="form">
                 <form method="post" autocomplete="on">
-                    <p>
-                        <legend>I'm interested in</legend>
-                        <input type="checkbox" name="ux-ui" id="iux-ui"> <label for="iux-ui">UI/UX design</label>
-                        <input type="checkbox" name="web-design" id="iweb-design">
-                        <label for="iweb-design">Web design</label>
-                        <input type="checkbox" name="grap-design" id="igrap-design"> <label for="igrap-design">Graphic design</label>
-                        <input type="checkbox" name="design-sst" id="idesign-sst"> <label for="idesign-sst">Design system</label>
-                        <input type="checkbox" name="other" id="iother"> <label for="iother">Other</label>
-                    </p>
+                    <fieldset>
+                        <legend>I'm interested in...</legend>
+                        <input type="radio" name="interests" id="iux-ui">
+                        <label class="options" for="iux-ui">UI/UX design</label>
+
+                        <input type="radio" name="interests" id="iweb-design">
+                        <label class="options" for="iweb-design">Web design</label>
+                        
+                        <input type="radio" name="interests" id="igrap-design">
+                        <label class="options" for="igrap-design">Graphic design</label>
+
+                        <input type="radio" name="interests" id="idesign-sst"> <label class="options" for="idesign-sst">Design system</label>
+                        
+                        <input type="radio" name="interests" id="iother"> 
+                        <label class="options" for="iother">Other</label>
+                    </fieldset>
                     <div class="field">
                         <input type="text" name="name" id="iname" placeholder="Your name">
                     </div>
