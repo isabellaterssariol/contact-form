@@ -1,8 +1,8 @@
 /* General styles*/
 * {
   font-family: "Poppins";
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -21,22 +21,20 @@ main {
   position: relative;
   height: 100vh;
   width: 100vw;
-  padding: 20px;
+  padding: 1.25rem;
   display: grid;
   grid-template-areas: "section1 section2 section2";
 }
-
-
 
 /* Information section*/
 section#infos {
     position: absolute;
     height: 95vh;
-    padding: 20px;
+    padding: 1.25rem;
 
     display: flex;
     flex-direction: column;
-    row-gap: 20px; 
+    row-gap: 1.25rem; 
 }
 
 section#infos h1 {
@@ -50,37 +48,35 @@ section#infos h1 {
 #contact li {
     list-style: none;
     font-size: 1.2rem;
-    padding: 20px 60px 20px 15px;
+    padding: 1.25rem 3.75rem 1.25rem 0.9rem;
 }
 
 #contact li > i {
     color: var(--color-secundary);
-    margin-right: 5px;
+    margin-right: 0.3rem;
 }
 
 #contact li:hover {
     background-color: #a910791c;
     border: 2px solid var(--color-secundary);
-    border-radius: 10px;
+    border-radius: 0.62rem;
 }
 
 #social-media li {
     display: inline;
     list-style: none;
     font-size: 1.5rem;
-    padding: 15px;
+    padding: 0.938rem;
 }
 
 #social-media li {
-    margin-right: 40px;
+    margin-right: 2.5rem;
 }
 
 #social-media li:hover {
     background-color: #a91079;
-    border-radius: 40px;
+    border-radius: 2.5rem;
 }
-
-
 
 /* Form section*/
 section > div#form {
@@ -95,8 +91,8 @@ section > div#form {
 
   background-color: var(--color-white);
   color: #2e0249;
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 1.25rem;
+  padding: 1.875rem;
   overflow: hidden; /*to not leak content outside the border*/
 }
 
@@ -113,33 +109,66 @@ input[type="radio"] {
   background-color: var(--color-white);
   color: #999999;
   border: 1px solid #999999;
-  border-radius: 8px;
-  padding: 10px 18px;
-  margin: 10px 3px 0px 3px;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  margin: 0.625rem 0.188rem 0 0.188rem;
   cursor: pointer;
 }
 
 .field {
   position: relative;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 0.625rem;
+  padding: 0.625rem;
 }
 
 .field textarea {
     resize: none;
 }
 
-.field input,
-.field textarea {
+.field input, .field textarea {
   display: block;
   width: 100%;
-  height: 45px;
+  height: 2.813rem;
 
   background-color: var(--color-white);
-  font-size: 14px;
+  font-size: 0.95rem;
   border: 0 none;
-  border-bottom: 3px solid #9999997b;
-  padding: 10px 0px 0px 3px;
+  border-bottom: 0.188rem solid #9999997b;
+  padding: 0.625rem 0 0 0.1rem;
+}
+
+.field i {
+  position: absolute;
+  top: 40%;
+  right: 0.938rem;
+  display: none;
+}
+
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-bottom: 0.188rem solid var(--color-secundary);
+}
+
+input:focus::placeholder {
+  color: var(--color-primary);
+}
+
+#errorPoint {
+  color: #ff0000;
+  top: 30%;
+  right: 1.25rem;
+}
+
+#sucessPoint {
+  color: #008000;
+  top: 40%;
+  right: 1.25rem;
+}
+
+.s-required{
+  font-size: 0.938rem;
+  margin: 0;
+  display: none;
 }
 
 
@@ -148,18 +177,17 @@ input[type="radio"] {
   position: absolute;
   top: 85%;
   left: 5%;
-  
+
   background-color: #9999997b;
   width: 40%;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 0.625rem;
+  padding: 0.938rem;
 }
 
-button,
-button input {
+button, button input {
   position: relative;
   color: var(--color-white);
-  font-size: 14px;
+  font-size: 0.875rem;
   border: 0 none;
   background: transparent;
   cursor: pointer;

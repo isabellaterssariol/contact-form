@@ -14,6 +14,7 @@
     <main>
         <section id="infos">
             <h1 id="text">Let's discuss <br> on something <span id="text-decoration">cool</span> together</h1>
+
             <ul id="contact">
                 <address>
                     <li>
@@ -30,12 +31,14 @@
                     </li>
                 </address>
             </ul>
+
             <ul id="social-media">
                 <li><i class="fa-brands fa-facebook-f"></i></li>
                 <li><i class="fa-brands fa-instagram"></i></li>
                 <li><i class="fa-brands fa-twitter"></i></li>
             </ul>
         </section>
+
         <section id="contact-form">
             <div id="form">
                 <form method="post" autocomplete="on">
@@ -55,16 +58,26 @@
                         <input type="radio" name="interests" id="iother"> 
                         <label class="options" for="iother">Other</label>
                     </fieldset>
+
                     <div class="field">
-                        <input type="text" name="name" id="iname" placeholder="Your name">
+                        <input type="text" name="name" id="iname" placeholder="Your name" class="f-required" oninput="nameValue()">
+                        <i id='errorPoint' class="fas fa-exclamation-circle"></i>
+                        <i id='sucessPoint' class="fas fa-check-circle"></i>
+                        <span class="s-required">The name must have, at least, 2 words.</span>
                     </div>
                     
                     <div class="field">
-                        <input type="email" name="email" id="iemail" placeholder="Your email">
+                        <input type="email" name="email" id="iemail" placeholder="Your email" class="f-required" oninput="emailValue()">
+                        <i id='errorPoint' class="fas fa-exclamation-circle"></i>
+                        <i id='sucessPoint' class="fas fa-check-circle"></i>
+                        <span class="s-required">Enter a valid email address.</span>
                     </div>
                     
                     <div class="field">
-                        <textarea name="msg" id="imsg" placeholder="Your message"></textarea>
+                        <textarea name="msg" id="imsg" placeholder="Your message" class="f-required" oninput="messageValue()"></textarea>
+                        <i id='errorPoint' class="fas fa-exclamation-circle"></i>
+                        <i id='sucessPoint' class="fas fa-check-circle"></i>
+                        <span class="s-required">The message must have, at least, 20 letters.</span>
                     </div>
                     
                    <div class="btn">
@@ -80,5 +93,7 @@
 
     <script src="https://kit.fontawesome.com/5c606ab314.js" crossorigin="anonymous">
     </script>
+
+    <script src="index.js"></script>
 </body>
 </html>
