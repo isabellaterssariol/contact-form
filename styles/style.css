@@ -1,3 +1,4 @@
+/* General styles*/
 * {
   font-family: "Poppins";
   margin: 0px;
@@ -14,7 +15,6 @@
 body {
   background-color: var(--color-primary);
   color: var(--color-white);
-  
 }
 
 main {
@@ -26,13 +26,20 @@ main {
   grid-template-areas: "section1 section2 section2";
 }
 
+
+
+/* Information section*/
 section#infos {
     position: absolute;
+    height: 95vh;
     padding: 20px;
-    grid-area: section1;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px; 
 }
 
-section#infos > h1 {
+section#infos h1 {
     font-size: 2.1rem;
 }
 
@@ -40,14 +47,42 @@ section#infos > h1 {
     color: #a91079;
 }
 
-ul {
+#contact li {
     list-style: none;
+    font-size: 1.2rem;
+    padding: 20px 60px 20px 15px;
 }
 
-section#contact-form {
-    grid-area: section2;
+#contact li > i {
+    color: var(--color-secundary);
+    margin-right: 5px;
 }
 
+#contact li:hover {
+    background-color: #a910791c;
+    border: 2px solid var(--color-secundary);
+    border-radius: 10px;
+}
+
+#social-media li {
+    display: inline;
+    list-style: none;
+    font-size: 1.5rem;
+    padding: 15px;
+}
+
+#social-media li {
+    margin-right: 40px;
+}
+
+#social-media li:hover {
+    background-color: #a91079;
+    border-radius: 40px;
+}
+
+
+
+/* Form section*/
 section > div#form {
   position: absolute;
   top: 50%;
@@ -85,9 +120,9 @@ input[type="radio"] {
 }
 
 .field {
+  position: relative;
   margin-top: 10px;
   padding: 10px;
-  position: relative;
 }
 
 .field textarea {
@@ -107,10 +142,13 @@ input[type="radio"] {
   padding: 10px 0px 0px 3px;
 }
 
+
+/* Button 'Send Message'*/
 .btn {
   position: absolute;
   top: 85%;
   left: 5%;
+  
   background-color: #9999997b;
   width: 40%;
   border-radius: 10px;
@@ -129,4 +167,30 @@ button input {
 
 button {
   width: 100%;
+}
+
+
+/*Styles for grid items */
+section#infos {
+  grid-area: section1;
+}
+
+section#contact-form {
+  grid-area: section2;
+}
+
+#text {
+  flex: 1;
+}
+
+#contact {
+  display: flex;
+  align-items: center;
+  flex: 2;
+}
+
+#social-media {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
 }
