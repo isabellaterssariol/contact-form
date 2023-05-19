@@ -44,46 +44,46 @@
                 <form method="post" autocomplete="on">
                     <fieldset>
                         <legend>I'm interested in...</legend>
-                        <input type="radio" name="interests" id="iux-ui">
+                        <input type="radio" name="interests" id="iux-ui" class="custom-radio">
                         <label class="options" for="iux-ui">UI/UX design</label>
 
-                        <input type="radio" name="interests" id="iweb-design">
+                        <input type="radio" name="interests" id="iweb-design" class="custom-radio">
                         <label class="options" for="iweb-design">Web design</label>
                         
-                        <input type="radio" name="interests" id="igrap-design">
+                        <input type="radio" name="interests" id="igrap-design" class="custom-radio">
                         <label class="options" for="igrap-design">Graphic design</label>
 
-                        <input type="radio" name="interests" id="idesign-sst"> <label class="options" for="idesign-sst">Design system</label>
+                        <input type="radio" name="interests" id="idesign-sst" class="custom-radio"> <label class="options" for="idesign-sst">Design system</label>
                         
-                        <input type="radio" name="interests" id="iother"> 
+                        <input type="radio" name="interests" id="iother" class="custom-radio"> 
                         <label class="options" for="iother">Other</label>
                     </fieldset>
 
                     <div class="field">
                         <input type="text" name="name" id="iname" placeholder="Your name" class="f-required" oninput="nameValue()">
-                        <i id='errorPoint' class="fas fa-exclamation-circle"></i>
-                        <i id='sucessPoint' class="fas fa-check-circle"></i>
+                        <i class="errorPoint fas fa-exclamation-circle"></i>
+                        <i class="successPoint fas fa-check-circle"></i>
                         <span class="s-required">The name must have, at least, 2 words.</span>
-                    </div>
+                      </div>
                     
                     <div class="field">
                         <input type="email" name="email" id="iemail" placeholder="Your email" class="f-required" oninput="emailValue()">
-                        <i id='errorPoint' class="fas fa-exclamation-circle"></i>
-                        <i id='sucessPoint' class="fas fa-check-circle"></i>
+                        <i class="errorPoint fas fa-exclamation-circle"></i>
+                        <i class="successPoint fas fa-check-circle"></i>
                         <span class="s-required">Enter a valid email address.</span>
                     </div>
                     
                     <div class="field">
                         <textarea name="msg" id="imsg" placeholder="Your message" class="f-required" oninput="messageValue()"></textarea>
-                        <i id='errorPoint' class="fas fa-exclamation-circle"></i>
-                        <i id='sucessPoint' class="fas fa-check-circle"></i>
+                        <i class="errorPoint fas fa-exclamation-circle"></i>
+                        <i class="successPoint fas fa-check-circle"></i>
                         <span class="s-required">The message must have, at least, 20 letters.</span>
                     </div>
                     
                    <div class="btn">
                     <button>
                         <i class="fa-sharp fa-solid fa-paper-plane"></i>
-                        <input type="submit" value=" Send Message">
+                        <input id="submitButton" type="submit" value=" Send Message" disabled>
                     </button>
                    </div>   
                 </form>

@@ -100,7 +100,7 @@ fieldset {
   border: none;
 }
 
-input[type="radio"] {
+.custom-radio {
   display: none;
 }
 
@@ -114,6 +114,13 @@ input[type="radio"] {
   margin: 0.625rem 0.188rem 0 0.188rem;
   cursor: pointer;
 }
+
+.custom-radio:checked + .options {
+  background-color: var(--color-secundary);
+  color: white;
+  border: 0 none;
+}
+
 
 .field {
   position: relative;
@@ -137,13 +144,6 @@ input[type="radio"] {
   padding: 0.625rem 0 0 0.1rem;
 }
 
-.field i {
-  position: absolute;
-  top: 40%;
-  right: 0.938rem;
-  display: none;
-}
-
 .field input:focus, .field textarea:focus {
   outline: none;
   border-bottom: 0.188rem solid var(--color-secundary);
@@ -153,15 +153,21 @@ input:focus::placeholder {
   color: var(--color-primary);
 }
 
-#errorPoint {
+.field i {
+  position: absolute;
+  top: 35%;
+  right: 1rem;
+  display: none;
+}
+
+.errorPoint {
   color: #ff0000;
-  top: 30%;
   right: 1.25rem;
 }
 
-#sucessPoint {
+.successPoint {
+  position: sticky;
   color: #008000;
-  top: 40%;
   right: 1.25rem;
 }
 
@@ -178,7 +184,7 @@ input:focus::placeholder {
   top: 85%;
   left: 5%;
 
-  background-color: #9999997b;
+  background-color: #a91079;
   width: 40%;
   border-radius: 0.625rem;
   padding: 0.938rem;
