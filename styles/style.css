@@ -48,12 +48,11 @@ section#infos h1 {
 #contact li {
     list-style: none;
     font-size: 1.2rem;
-    padding: 1.25rem 3.75rem 1.25rem 0.9rem;
+    padding: 1.25rem 3.75rem 1.25rem 0.5rem;
 }
 
 #contact li > i {
     color: var(--color-secundary);
-    margin-right: 0.3rem;
 }
 
 #contact li:hover {
@@ -173,9 +172,9 @@ input:focus::placeholder {
 }
 
 .s-required{
+  display: none;
   font-size: 0.938rem;
   margin: 0;
-  display: none;
 }
 
 
@@ -184,8 +183,8 @@ input:focus::placeholder {
   position: absolute;
   top: 85%;
   left: 5%;
-  background-color: var(--color-secundary);
   width: 40%;
+  background-color: var(--color-secundary);
   border-radius: 0.625rem;
   padding: 0.938rem;
   color: var(--color-white);
