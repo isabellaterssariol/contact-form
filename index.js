@@ -93,3 +93,40 @@ function validateForm() {
     }
 }
 
+// Manipulating form data and localStorage
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const interests = document.querySelector('input[name="interests"]:checked');
+  const name = document.getElementById('iname').value.trim();
+  const email = document.getElementById('iemail').value.trim();
+  const message = document.getElementById('imsg').value.trim();
+
+  if (validateRadio() && validateName() && validateEmail() && validateMessage()) {
+    const formData = {
+      interests: interests ? interests.nextElementSibling.textContent : '',
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    localStorage.setItem('formData', JSON.stringify(formData));
+    window.location.href = 'second_page.html';
+  }
+});
+
+// Manipulating event listener to inputs
+document.addEventListener('DOMContentLoaded', () => {
+  const radioInput = document.querySelectorAll('input[name="interests"]');
+  const nameInput = document.getElementById('iname');
+  const emailInput = document.getElementById('iemail');
+  const messageInput = document.getElementById('imsg');
+
+  radioInput.forEach((input) => {
+    input.addEventListener('change', validateForm);
+  });
+  nameInput.addEventListener('input', validateForm);
+  emailInput.addEventListener('input', validateForm);
+  messageInput.addEventListener('input', validateForm);
+});

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Data</title>
+</head>
+<body>
+  <h1>Informations of Contact Form</h1>
+  <div id="form-data"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const formData = localStorage.getItem('formData');
+      const formDataElement = document.getElementById('form-data');
+
+      if (formData) {
+        const parsedFormData = JSON.parse(formData);
+
+        formDataElement.innerText = JSON.stringify(parsedFormData, null, 2);
+      } else {
+        formDataElement.innerText = 'No informations found.';
+      }
+
+      localStorage.removeItem('formData');
+    });
+  </script>
+</body>
+</html>
