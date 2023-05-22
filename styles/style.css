@@ -85,8 +85,6 @@ section > div#form {
   width: 50vw;
   height: 90vh;
   transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
-  transition-timing-function: ease;
 
   background-color: var(--color-white);
   color: #2e0249;
