@@ -1,0 +1,198 @@
+/* Responsive design */
+@media screen and (max-width: 699px) {
+    main {
+      grid-template-areas: 
+        "section1"
+        "section2";
+    }
+  
+    section#infos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      position: static;
+      height: auto;
+      margin-bottom: 2rem;
+      padding: 1rem;
+    }
+  
+    section#infos h1 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  
+    #contact li {
+      font-size: 1.2rem;
+      padding: 1rem 2.5rem 1rem 0.5rem;
+    }
+  
+    #social-media li {
+      font-size: 1.25rem;
+      padding: 0.75rem;
+    }
+  
+    section > div#form {
+      position: relative;
+      top: 40%;
+      left: 40%;
+      margin: 0 auto;
+      margin-top: 2rem;
+      margin-bottom: 4rem; /* Aumente o espaço inferior */
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      padding: 2rem; 
+      box-sizing: border-box; 
+    }
+  
+    fieldset {
+      margin-top: 1.5rem;
+    }
+  
+    .field input,
+    .field textarea {
+      height: 2rem;
+      font-size: 0.85rem;
+    }
+  
+    #submit-btn {
+      position: relative; 
+      top: 1rem; 
+      margin-top: 1rem; 
+      width: 80%;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+}
+  
+@media screen and (max-width: 984px) and (min-width: 700px) {
+    main {
+      grid-template-areas: 
+      "section1",
+      "section2";
+      grid-template-rows: auto auto; 
+    }
+  
+    section#infos h1 {
+      font-size: 1.5rem;
+    }
+    #contact li {
+      font-size: 1rem;
+      padding: 1rem .5rem;
+    }
+  
+    section#contact-form {
+      position: relative; 
+      top: 0; 
+      left: 0; 
+      width: 100%;
+      height: auto;
+      transform: none;
+    }
+  
+    #submit-btn {
+      top: 89%;
+      width: 90%;
+      font-size: 1.2rem;
+      padding: .5rem;
+      border-radius: 1rem;
+    }
+}
+  
+  
+@media screen and (max-width: 1150px) and (min-width: 985px) {
+    section#infos h1 {
+      font-size: 1.8rem;
+    }
+    #contact li {
+      font-size: 1rem;
+      padding: 1rem .5rem;
+    }
+}
+  
+@media screen and (min-width: 1800px) {
+    main {
+      grid-template-areas: "section1 section2";
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    section#infos,
+    section#contact-form {
+      padding: 2rem;
+    }
+  
+    section#infos h1 {
+      font-size: 2rem;
+    }
+  
+    #contact li {
+      font-size: 1.3rem;
+      padding: 1.875rem 3.75rem 1.875rem 0.625rem;
+    }
+  
+    #contact li > i {
+      font-size: 1.3rem;
+    }
+  
+    #social-media li {
+      font-size: 1.8rem;
+      padding: 1.25rem;
+    }
+  
+    section#contact-form {
+      width: 90vw;
+      height: 80vh;
+      padding: 2rem;
+    }
+  
+    legend {
+      font-size: 1.6rem;
+    }
+  
+    .options {
+      font-size: 1.2rem;
+      padding: 1.2rem 1.8rem;
+      margin: 0.9rem 0.3rem;
+    }
+  
+    .field input,
+    .field textarea {
+      height: 2.6rem;
+      font-size: 1.3rem;
+    }
+  
+    .field input:focus, .field textarea:focus {
+      outline: none;
+      border-bottom: 0.2rem solid var(--color-secundary);
+    }
+  
+    .field i {
+      position: absolute;
+      right: 1.3rem;
+      display: none;
+      font-size: 1.2rem;
+    }
+  
+    .field .errorPoint {
+      top: 20%;
+    }
+  
+    .field .successPoint {
+      top: 35%;
+    }
+  
+    .s-required {
+      font-size: 1.5rem;
+    }
+  
+    #submit-btn {
+      top: 85%;
+      left: 3%;
+      width: 40%;
+      font-size: 1.2rem;
+      padding: 1.2rem;
+      border-radius: 1rem;
+    }
+}

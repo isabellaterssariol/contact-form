@@ -49,6 +49,7 @@ section#infos h1 {
     list-style: none;
     font-size: 1.2rem;
     padding: 1.25rem 3.75rem 1.25rem 0.5rem;
+    border: 0.125rem solid transparent;
 }
 
 #contact li > i {
@@ -142,30 +143,30 @@ fieldset {
 }
 
 .field input:focus, .field textarea:focus {
+  color: var(--color-primary);
   outline: none;
   border-bottom: 0.188rem solid var(--color-secundary);
 }
 
-input:focus::placeholder {
+input:focus::placeholder, textarea:focus::placeholder {
   color: var(--color-primary);
 }
 
 .field i {
+  display: none;
   position: absolute;
   top: 35%;
   right: 1rem;
-  display: none;
+  right: 1.35rem;
 }
 
 .field .errorPoint {
   color: #ff0000;
-  right: 1.35rem;
   top: 28%;
 }
 
 .field .successPoint {
   color: #008000;
-  right: 1.25rem;
   top: 40%;
 }
 
@@ -223,3 +224,4 @@ section#contact-form {
   flex: 1;
   align-items: flex-end;
 }
+
