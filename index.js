@@ -1,57 +1,95 @@
-const form = document.getElementById('form');
-const fields = document.querySelectorAll('.f-required')
-const spans = document.querySelectorAll('.s-required')
-const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-const wordRegex = /\b\w+\b.*\b\w+\b/;
-const errorMark = document.querySelectorAll('.errorPoint');
-const sucessMark = document.querySelectorAll('.successPoint');
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    nameValue();
-    emailValue();
-    messageValue();
-    buttonCheck();
-});
-
-function showError(index){
-    fields[index].style.border = '2px solid #ff0000';
-    spans[index].style.display = 'block';
-    errorMark[index].style.display = 'block';
-    sucessMark[index].style.display = 'none';
+// Function to declare errors and success of fields
+function fieldElements(fieldSelector) {
+    const input = document.querySelector(fieldSelector);
+    const showError = input.parentElement.querySelector('.errorPoint');
+    const showSuccess = input.parentElement.querySelector('.successPoint');
+    const errorMessage = input.parentElement.querySelector('.s-required');
+  
+    return {input, showError, showSuccess, errorMessage};
 }
-
-function showSuccess(index){
-    fields[index].style.border = '2px solid #008000';
-    spans[index].style.display = 'none';
-    errorMark[index].style.display = 'none';
-    sucessMark[index].style.display = 'block';
-}
-
-const nameValue = function() {
-    if(!wordRegex.test(fields[0].value))
-    {
-        showError(0);
+  
+// Function to validate a field (generic)
+function validateField(fieldSelector, validationFunction) {
+    const { input, showError, showSuccess, errorMessage } = fieldElements(fieldSelector);
+    const fieldValue = input.value.trim();
+    const isValid = validationFunction(fieldValue);
+  
+    if (fieldValue === '') {
+      showError.style.display = 'none';
+      showSuccess.style.display = 'none';
+      errorMessage.style.display = 'none';
+      input.style.border = '2px solid initial';
+    } else if (isValid) {
+      showError.style.display = 'none';
+      showSuccess.style.display = 'inline-block';
+      errorMessage.style.display = 'none';
+      input.style.border = '2px solid green';
     } else {
-        showSuccess(0);
+      showError.style.display = 'inline-block';
+      showSuccess.style.display = 'none';
+      errorMessage.style.display = 'inline-block';
+      input.style.border = '2px solid red';
     }
+  
+    return isValid;
 }
-
-const emailValue = function() {
-    if(!emailRegex.test(fields[1].value))
-    {
-        showError(1);
-    } else {
-        showSuccess(1);
+  
+// Function to radio input
+function validateRadio() {
+    const radioInput = document.querySelectorAll('input[name="interests"]');
+    let radioChecked = false;
+  
+    for (let i = 0; i < radioInput.length; i++) {
+      if (radioInput[i].checked) {
+        radioChecked = true;
+        break;
+      }
     }
+    return radioChecked;
 }
-
-const messageValue = function() {
-    if(fields[2].value.length < 20)
-    {
-        showError(2);
+  
+  
+// Function to text input (name)
+function validateName() {
+    const validationFunction = (value) => {
+      const wordCheck = /\b\w+\b.*\b\w+\b/;
+      return wordCheck.test(value);
+    };
+  
+    return validateField('#iname', validationFunction);
+}
+  
+// Function to email input
+function validateEmail() {
+    const validationFunction = (value) => {
+      const emailCheck = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+      return emailCheck.test(value);
+    };
+  
+    return validateField('#iemail', validationFunction);
+}
+  
+// Function to textarea (message)
+function validateMessage() {
+    const validationFunction = (value) => {
+      return value.length >= 20;
+    };
+  
+    return validateField('#imsg', validationFunction);
+}
+  
+// Function to validate form
+function validateForm() {
+    const radioValid = validateRadio();
+    const nameValid = validateName();
+    const emailValid = validateEmail();
+    const messageValid = validateMessage();
+    const submitBtn = document.querySelector('button[type="submit"]');
+  
+    if (radioValid && nameValid && emailValid && messageValid) {
+      submitBtn.disabled = false;
     } else {
-        showSuccess(2);
+      submitBtn.disabled = true;
     }
 }
 

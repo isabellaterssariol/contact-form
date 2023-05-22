@@ -39,61 +39,58 @@
             </ul>
         </section>
 
-        <section id="contact-form">
+        <section>
             <div id="form">
-                <form method="post" autocomplete="on">
+                <form id="contact-form" method="post" autocomplete="on">
                     <fieldset>
                         <legend>I'm interested in...</legend>
-                        <input type="radio" name="interests" id="iux-ui" class="custom-radio">
+                        <input type="radio" name="interests" id="iux-ui" class="custom-radio" onchange="validateRadio()">
                         <label class="options" for="iux-ui">UI/UX design</label>
 
-                        <input type="radio" name="interests" id="iweb-design" class="custom-radio">
+                        <input type="radio" name="interests" id="iweb-design" class="custom-radio" onchange="validateRadio()">
                         <label class="options" for="iweb-design">Web design</label>
                         
-                        <input type="radio" name="interests" id="igrap-design" class="custom-radio">
+                        <input type="radio" name="interests" id="igrap-design" class="custom-radio" onchange="validateRadio()">
                         <label class="options" for="igrap-design">Graphic design</label>
 
-                        <input type="radio" name="interests" id="idesign-sst" class="custom-radio"> <label class="options" for="idesign-sst">Design system</label>
+                        <input type="radio" name="interests" id="idesign-sst" class="custom-radio" onchange="validateRadio()"> 
+                        <label class="options" for="idesign-sst">Design system</label>
                         
-                        <input type="radio" name="interests" id="iother" class="custom-radio"> 
+                        <input type="radio" name="interests" id="iother" class="custom-radio" onchange="validateRadio()"> 
                         <label class="options" for="iother">Other</label>
                     </fieldset>
 
                     <div class="field">
-                        <input type="text" name="name" id="iname" placeholder="Your name" class="f-required" oninput="nameValue()">
+                        <input type="text" name="name" id="iname" placeholder="Your name" oninput="validateName()">
                         <i class="errorPoint fas fa-exclamation-circle"></i>
                         <i class="successPoint fas fa-check-circle"></i>
                         <span class="s-required">The name must have, at least, 2 words.</span>
-                      </div>
+                    </div>
                     
                     <div class="field">
-                        <input type="email" name="email" id="iemail" placeholder="Your email" class="f-required" oninput="emailValue()">
+                        <input type="email" name="email" id="iemail" placeholder="Your email" oninput="validateEmail()">
                         <i class="errorPoint fas fa-exclamation-circle"></i>
                         <i class="successPoint fas fa-check-circle"></i>
                         <span class="s-required">Enter a valid email address.</span>
                     </div>
                     
                     <div class="field">
-                        <textarea name="msg" id="imsg" placeholder="Your message" class="f-required" oninput="messageValue()"></textarea>
+                        <textarea name="msg" id="imsg" placeholder="Your message" oninput="validateMessage()"></textarea>
                         <i class="errorPoint fas fa-exclamation-circle"></i>
                         <i class="successPoint fas fa-check-circle"></i>
                         <span class="s-required">The message must have, at least, 20 letters.</span>
                     </div>
                     
-                   <div class="btn">
-                    <button>
+                    <button type="submit" id="submit-btn" disabled>
                         <i class="fa-sharp fa-solid fa-paper-plane"></i>
-                        <input id="submitButton" type="submit" value=" Send Message" disabled>
-                    </button>
-                   </div>   
+                        Send Message
+                    </button> 
                 </form>
             </div>
         </section>
     </main>
 
-    <script src="https://kit.fontawesome.com/5c606ab314.js" crossorigin="anonymous">
-    </script>
-
+    <script src="https://kit.fontawesome.com/5c606ab314.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>
