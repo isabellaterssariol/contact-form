@@ -84,7 +84,6 @@ function validateForm() {
 // Manipulating form data and localStorage
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function (event) {
-    var _a;
     event.preventDefault();
     const interests = document.querySelector('input[name="interests"]:checked');
     const name = document.getElementById('iname');
@@ -92,7 +91,7 @@ contactForm.addEventListener('submit', function (event) {
     const message = document.getElementById('imsg');
     if (validateRadio() && validateName() && validateEmail() && validateMessage()) {
         const formData = {
-            interests: interests ? (((_a = interests.nextElementSibling) === null || _a === void 0 ? void 0 : _a.textContent) || '') : '',
+            interests: interests ? interests.nextElementSibling.textContent || '' : '',
             name: name.value.trim(),
             email: email.value.trim(),
             message: message.value.trim(),
@@ -101,6 +100,7 @@ contactForm.addEventListener('submit', function (event) {
         window.location.href = 'second_page.html';
     }
 });
+
 // Manipulating event listener to inputs
 document.addEventListener('DOMContentLoaded', () => {
     const radioInput = document.querySelectorAll('input[name="interests"]');

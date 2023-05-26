@@ -22,12 +22,20 @@
       if (formData) {
         const parsedFormData = JSON.parse(formData);
 
-        formDataElement.innerText = JSON.stringify(parsedFormData, null, 2);
+        const interests = parsedFormData.interests || 'N/A';
+        const name = parsedFormData.name || 'N/A';
+        const email = parsedFormData.email || 'N/A';
+        const message = parsedFormData.message || 'N/A';
+
+        formDataElement.innerHTML = `
+          <p><strong>Interests:</strong> ${interests}</p>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Message:</strong> ${message}</p>
+        `;
       } else {
         formDataElement.innerText = 'No informations found.';
       }
-
-      localStorage.removeItem('formData');
     });
   </script>
 </body>

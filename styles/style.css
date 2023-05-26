@@ -78,6 +78,10 @@ section#infos h1 {
     border-radius: 2.5rem;
 }
 
+address {
+  font-style: normal;
+}
+
 /* Form section*/
 section > div#form {
   position: absolute;
@@ -106,17 +110,17 @@ fieldset {
   display: inline-block;
   background-color: var(--color-white);
   color: #999999;
-  border: 0.063rem solid #999999;
+  border: 0.07rem solid #999999;
   border-radius: 0.5rem;
   padding: 0.625rem 1.125rem;
   margin: 0.625rem 0.188rem 0 0.188rem;
   cursor: pointer;
 }
 
-.custom-radio:checked + .options {
+.custom-radio:checked + .options{
   background-color: var(--color-secundary);
   color: white;
-  border: 0 none;
+  border: 0.07rem solid var(--color-secundary);
 }
 
 
