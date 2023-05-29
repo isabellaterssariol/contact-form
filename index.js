@@ -7,9 +7,10 @@ function fieldElements(fieldSelector) {
     const errorMessage = input.parentElement.querySelector('.s-required');
     return { input, showError, showSuccess, errorMessage };
 }
+
 // Function to validate a field (generic)
 function validateField(fieldSelector, validationFunction) {
-    const { input, showError, showSuccess, errorMessage } = fieldElements(fieldSelector);
+    const {input, showError, showSuccess, errorMessage} = fieldElements(fieldSelector);
     const fieldValue = input.value.trim();
     const isValid = validationFunction(fieldValue);
     if (fieldValue === '') {
@@ -32,6 +33,7 @@ function validateField(fieldSelector, validationFunction) {
     }
     return isValid;
 }
+
 // Function to radio input
 function validateRadio() {
     const radioInput = document.querySelectorAll('input[name="interests"]');
@@ -44,6 +46,7 @@ function validateRadio() {
     }
     return radioChecked;
 }
+
 // Function to text input (name)
 function validateName() {
     const validationFunction = (value) => {
@@ -52,6 +55,7 @@ function validateName() {
     };
     return validateField('#iname', validationFunction);
 }
+
 // Function to email input
 function validateEmail() {
     const validationFunction = (value) => {
@@ -60,6 +64,7 @@ function validateEmail() {
     };
     return validateField('#iemail', validationFunction);
 }
+
 // Function to textarea (message)
 function validateMessage() {
     const validationFunction = (value) => {
@@ -67,6 +72,7 @@ function validateMessage() {
     };
     return validateField('#imsg', validationFunction);
 }
+
 // Function to validate form
 function validateForm() {
     const radioValid = validateRadio();
@@ -81,6 +87,7 @@ function validateForm() {
         submitBtn.disabled = true;
     }
 }
+
 // Manipulating form data and localStorage
 const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', function (event) {
